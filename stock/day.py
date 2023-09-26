@@ -15,7 +15,6 @@ for page in range(2,5):
     res = requests.get(URL, params = params, headers=h)
     bs = BeautifulSoup(res.text, "html.parser")
 
-
     for data in bs.select(".type2 tr") :
         if len(data.select("td")) == 7 :
             writer.writerow([data.select("td")[0].text.replace(".","-")
